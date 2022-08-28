@@ -1,0 +1,54 @@
+@use '../../sass/variable' as *;
+@use '../../sass/mixin' as *;
+
+footer {
+  margin-top: 4rem;
+  background: $color--primary;
+  padding: 3rem 0;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+footer a {
+  color: $color--bg;
+}
+
+.permalinks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin: 0 auto 3rem;
+  list-style: none;
+
+  @include respond(sm) {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+.footer {
+  &__socials {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 4rem;
+
+    @include respond(sm) {
+      margin-bottom: 2.6rem;
+    }
+  }
+  &__socials a {
+    background: $color--bg;
+    color: $color--white;
+    padding: 0.8rem;
+    border-radius: 0.7rem;
+    display: flex;
+    border: 1px solid transparent;
+
+    &:hover {
+      background: transparent;
+      color: $color--bg;
+      border-color: $color--bg;
+    }
+  }
+}

@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+@import './mixin';
+@import './variable';
+@import './typography';
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: $color--bg;
+  color: $color--white;
+  line-height: 1.7;
+  background-image: url(../assets/bg-texture.png);
+  font-size: $font-size--default;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.container {
+  width: $container-width-lg;
+  margin: 0 auto;
+
+  @include respond(md) {
+    width: $container-width-md;
+  }
+
+  @include respond(sm) {
+    width: $container-width-sm;
+  }
+}
+
+.btn {
+  width: max-content;
+  display: inline-block;
+  color: $color--primary;
+  padding: 0.75rem 1.2rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  border: 1px solid $color--primary;
+  transition: $transition;
+
+  &--primary {
+    background-color: $color--primary;
+    color: $color--bg;
+  }
+}
+
+.btn:hover {
+  background-color: $color--white;
+  color: $color--bg;
+  border-color: transparent;
+}
+
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}

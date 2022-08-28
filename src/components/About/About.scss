@@ -1,0 +1,104 @@
+@use '../../sass/variable' as *;
+@use '../../sass/mixin' as *;
+
+.about {
+  &__container {
+    display: grid;
+    grid-template-columns: 35% 50%;
+    gap: 15%;
+
+    @include respond(md) {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+  }
+
+  &__me {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 2rem;
+    background: linear-gradient(
+      45deg,
+      transparent,
+      $color--primary,
+      transparent
+    );
+    display: grid;
+    place-items: center;
+
+    @include respond(md) {
+      width: 50%;
+      margin: 2rem auto 4rem;
+    }
+
+    @include respond(sm) {
+      width: 65%;
+      margin: 0 auto 3rem;
+    }
+  }
+
+  &__me-image {
+    height: 100%;
+    border-radius: 2rem;
+    overflow: hidden;
+    transform: rotate(10deg);
+    transition: $transition;
+
+    &:hover {
+      transform: rotate(0);
+    }
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    @include respond(sm) {
+      text-align: center;
+    }
+  }
+
+  &__content p {
+    margin: 2rem 0 2.6rem;
+    color: $color--light;
+
+    @include respond(md) {
+      margin: 1rem 0 1.5rem;
+    }
+
+    @include respond(sm) {
+      margin: 1.5rem 0;
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+
+    @include respond(sm) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+  }
+
+  &__card {
+    background: $color--primary-variant;
+    border: 1px solid transparent;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 1rem;
+    transition: $transition;
+
+    &:hover {
+      background: transparent;
+      border-color: $color--primary-variant;
+    }
+  }
+
+  &__icon {
+  }
+}
