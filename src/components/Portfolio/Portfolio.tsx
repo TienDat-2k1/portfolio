@@ -58,7 +58,7 @@ const Portfolio = () => {
           </div>
           <h3>This is a portfolio project</h3>
           <div className="portfolio__item-cta">
-            <a href="#" className="btn">
+            <a href="https://github.com/TienDat-2k1/portfolio" className="btn">
               GitHub
             </a>
             <a href="#" className="btn btn--primary">

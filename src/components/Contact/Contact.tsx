@@ -1,11 +1,18 @@
-import React, { FormEvent, useRef } from 'react';
+import React, { ChangeEvent, FormEvent, useRef, useState } from 'react';
 import './Contact.scss';
 import { AiOutlineMail } from 'react-icons/ai';
 import { SiMessenger } from 'react-icons/si';
 import emailjs from '@emailjs/browser';
 
+const initValue = {
+  name: '',
+  email: '',
+  message: '',
+};
+
 const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null);
+  const [value, setValue] = useState(initValue);
 
   const formSubmitHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -15,7 +22,17 @@ const Contact = () => {
       formRef.current === null ? '' : formRef.current,
       'R7nxVhFw4TpPkDyuo'
     );
+    setValue(initValue);
+    alert('send message successful');
   };
+
+  const inputChangeHandler = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value: vl } = e.target;
+    setValue({ ...value, [name]: vl });
+  };
+
   return (
     <section id="contact">
       <h5>Get In Touch</h5>
@@ -45,14 +62,25 @@ const Contact = () => {
             name="name"
             placeholder="Your Full Name"
             required
+            onChange={inputChangeHandler}
+            value={value.name}
           />
-          <input type="email" name="email" placeholder="Your Email" required />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            required
+            onChange={inputChangeHandler}
+            value={value.email}
+          />
           <textarea
             name="message"
             id=""
             rows={7}
             placeholder="Your Message"
             required
+            onChange={inputChangeHandler}
+            value={value.message}
           ></textarea>
           <button type="submit" className="btn btn--primary">
             Send Message
