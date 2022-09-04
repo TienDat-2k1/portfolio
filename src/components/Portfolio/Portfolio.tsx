@@ -2,6 +2,7 @@ import './Portfolio.scss';
 import IMG1 from '../../assets/movie-project.png';
 import IMG2 from '../../assets/recipeProject.png';
 import IMG3 from '../../assets/portfolio-project.png';
+import IMG4 from '../../assets/fitclub-project.png';
 
 const Portfolio = () => {
   return (
@@ -62,6 +63,27 @@ const Portfolio = () => {
               GitHub
             </a>
             <a href="#" className="btn btn--primary">
+              Live Demo
+            </a>
+          </div>
+        </article>
+        <article className="portfolio__item">
+          <div className="portfolio__item-image">
+            <img src={IMG4} alt="" />
+          </div>
+          <h3>This is a portfolio project</h3>
+          <div className="portfolio__item-cta">
+            <a
+              href="https://github.com/TienDat-2k1/fit-club-ui"
+              className="btn"
+            >
+              GitHub
+            </a>
+            <a
+              href="https://fit-club-ui.netlify.app/"
+              className="btn btn--primary"
+              target="_blank"
+            >
               Live Demo
             </a>
           </div>
