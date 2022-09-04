@@ -71,7 +71,7 @@ const Portfolio = () => {
           <div className="portfolio__item-image">
             <img src={IMG4} alt="" />
           </div>
-          <h3>This is a portfolio project</h3>
+          <h3>This is a fit club project</h3>
           <div className="portfolio__item-cta">
             <a
               href="https://github.com/TienDat-2k1/fit-club-ui"
