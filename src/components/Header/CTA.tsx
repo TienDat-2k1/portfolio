@@ -1,4 +1,4 @@
-import CV from '../../assets/cv1.pdf';
+import CV from '../../assets/cv.pdf';
 
 const CTA = () => {
   return (
